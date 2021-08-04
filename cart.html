@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping Cart</title>
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Tailwind CSS -->
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
+
+    <!-- Jdenticon Script -->
+    <script src="https://cdn.jsdelivr.net/npm/jdenticon@3.1.0/dist/jdenticon.min.js" async integrity="sha384-VngWWnG9GS4jDgsGEUNaoRQtfBGiIKZTiXwm9KpgAeaRn6Y/1tAFiyXqSzqC8Ga/" crossorigin="anonymous">
+    </script>
+</head>
+
+<body>
+    <div class="w-full bg-white">
+
+        <!--==========================================HEADER SECTION ==========================================-->
+        <div class="header h-16 bg-gray-900 flex items-center">
+
+            <!-- Amazon Logo -->
+            <div class="logo w-1/5 h-16 ml-10 cursor-pointer">
+                <a href="./index.html">
+                    <img class="w-28 h-16 object-contain" src="https://www.pinclipart.com/picdir/big/57-576184_view-our-amazon-storefront-amazon-logo-white-png.png" alt="Logo" />
+                </a>
+            </div>
+
+            <!-- Search Box -->
+            <input type="text" class="h-9 w-30 bg-gray-800 border border-gray-500 border-opacity-75 rounded-l-xl px-3
+            text-white ml-6 focus:outline-none placeholder-white cursor-pointer" id="search" placeholder="Search..." />
+
+            <!-- Categories Box-->
+            <div class="categories h-9 w-30 bg-gray-800 border border-gray-500 border-opacity-75 px-3
+            text-white focus:outline-none flex items-center cursor-pointer">Categories
+
+                <!-- Chevron-Down Icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-3 cursor-pointer" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+            </div>
+
+            <!-- Search Icon -->
+            <div class="search-icon bg-yellow-500 h-9 w-10 rounded-r-xl flex items-center justify-center text-white cursor-pointer">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+            </div>
+
+            <!-- Right Side Icons -->
+            <div class="icons text-white flex items-center ml-auto mr-8 w-48 h-16 justify-around cursor-pointer">
+
+                <!-- Heart Icon -->
+                <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 cursor-pointer" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                </svg>
+
+                <!-- Cart Icon -->
+                <div class="cart-icon relative h-10 w-10 bg-yellow-600 flex items-center justify-center rounded-xl text-small cursor-pointer">
+
+                    <!-- Cart Items Number -->
+                    <div class="cart-items-number absolute text-gray-800 text-xs -top-1 -right-1 h-4 w-4 rounded-full bg-white flex items-center justify-center">
+                        2</div>
+                    <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                    </svg>
+                </div>
+
+                <!-- Bell Icon -->
+                <div class="bell">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 cursor-pointer" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+                    </svg>
+                </div>
+
+                <!-- Jdenticon -->
+                <svg class="h-12 w-12 rounded-full cursor-pointer" data-jdenticon-value="Bhavesh"></svg>
+            </div>
+        </div>
+
+        <!--======================================MAIN SECTION (SIDEBAR)======================================-->
+        <div class="main h-screen flex">
+
+            <!-- Sidebar -->
+            <div class="main-sidebar w-1/5 bg-gray-900 border border-t-2 border-gray-700 p-6 font-bold">
+
+                <!-- Sidebar Content Categories -->
+                <div class="sidebar-categories">
+                    <div class="sidebar-main-categories text-yellow-500 cursor-pointer flex mb-4 bg-gray-700 rounded-lg p-2">
+
+                        <!-- Categories Icon -->
+                        <span class="w-8">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 cursor-pointer" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
+                            </svg>
+                        </span>
+                        <span>Categories</span>
+                    </div>
+
+                    <!-- Other Categories -->
+                    <div class="sidebar-main-category text-white cursor-pointer flex font-bold p-2 mb-2">
+                        <span class="w-8"></span>
+                        <span>Echo and Alexa</span>
+                    </div>
+                    <div class="sidebar-main-category text-white cursor-pointer flex font-bold p-2 mb-2">
+                        <span class="w-8"></span>
+                        <span>Kindle</span>
+                    </div>
+                    <div class="sidebar-main-category text-white cursor-pointer flex font-bold p-2 mb-2">
+                        <span class="w-8"></span>
+                        <span>Books</span>
+                    </div>
+                    <div class="sidebar-main-category text-white cursor-pointer flex font-bold p-2 mb-2">
+                        <span class="w-8"></span>
+                        <span>Electronics</span>
+                    </div>
+                    <div class="sidebar-main-category text-white cursor-pointer flex font-bold p-2 mb-2">
+                        <span class="w-8"></span>
+                        <span>Home and Garden</span>
+                    </div>
+                    <div class="sidebar-main-category text-white cursor-pointer flex font-bold p-2 mb-2">
+                        <span class="w-8"></span>
+                        <span>Film and Music</span>
+                    </div>
+                    <div class="sidebar-main-category text-white cursor-pointer flex font-bold p-2 mb-2">
+                        <span class="w-8"></span>
+                        <span>Gift Cards</span>
+                    </div>
+
+                    <!-- Special Categories -->
+                    <div class="sidebar-main-category text-white cursor-pointer flex font-bold p-2 mb-2 hover:bg-gray-700 rounded-xl p-2">
+                        <span class="w-8"><i class="fas fa-percent"></i></span>
+                        <span>Sell on Amazon</span>
+                    </div>
+                    <div class="sidebar-main-category text-white cursor-pointer flex font-bold p-2 mb-2 hover:bg-gray-700 rounded-xl p-2">
+                        <span class="w-8"><i class="far fa-question-circle"></i></span>
+                        <span>Help</span>
+                    </div>
+
+                    <div class="sidebar-main-category text-white cursor-pointer flex font-bold p-2 mb-2 hover:bg-gray-700 rounded-xl p-2">
+                        <span class="w-8"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+                            </svg></span>
+                        <span>Logout</span>
+                    </div>
+                </div>
+            </div>
+
+            <!--======================================MAIN SECTION (VIEW)======================================-->
+            <div class="main-section flex-1 p-6 bg-white">
+
+                <!-- Shopping Cart Title -->
+                <h1 class="font-medium text-gray-400 text-3xl mb-6">Shopping Cart</h1>
+
+                <!-- Shopping Cart Categories-->
+                <div class="table-title font-semibold text-gray-400 flex justify-around">
+                    <h2 class="flex-grow">Products</h2>
+                    <h2 class="w-48">Count</h2>
+                    <h2 class="w-48">Total Cost</h2>
+                    <span class="w-10"></span>
+                </div>
+
+                <!-- Shopping Cart Content 1-->
+                <div class="card-items mt-5">
+                    <div class="card-item flex items-center pb-4 border-b border-gray-200">
+
+                        <!-- Macbook Pro Image -->
+                        <div class="card-item-image w-40 h-24 bg-white p-4 rounded-lg">
+                            <img class="w-full h-full object-contain" src="https://m.media-amazon.com/images/I/71pC69I3lzL._AC_SL1500_.jpg">
+                        </div>
+
+                        <!-- Details and Brand of the Products -->
+                        <div class="card-item-details flex-grow">
+                            <div class="card-item-title font-medium text-sm text-gray-600">Apple Macbook Pro 15</div>
+                            <div class="card-item-brand text-sm font-medium text-gray-400">Apple</div>
+                        </div>
+
+                        <!-- Items Counter -->
+                        <div class="card-item-counter w-48 flex items-center">
+
+                            <!-- Chevron Left Icon-->
+                            <div class="chevron-left mr-2 h-6 w-6 bg-gray-100 text-gray-500 rounded-lg cursor-pointer flex items-center justify-center hover:bg-gray-200">
+                                <i class="fas fa-chevron-left"></i>
+                            </div>
+
+                            <!-- Counter Number -->
+                            <h4 class="text-gray-400">x1</h4>
+
+                            <!-- Chevron Right Icon-->
+                            <div class="chevron-right ml-2 h-6 w-6 bg-gray-100 text-gray-500 rounded-lg cursor-pointer flex items-center justify-center hover:bg-gray-200">
+                                <i class="fas fa-chevron-right"></i>
+                            </div>
+                        </div>
+
+                        <!-- Items Costs -->
+                        <div class="card-item-total-cost w-48 text-gray-400 font-medium">
+                            $2688.99
+                        </div>
+
+                        <!-- Cross Icon -->
+                        <div class="card-item-delete-icon w-10 font-semibold text-gray-400 cursor-pointer hover:text-gray-500">
+                            <i class="fas fa-times"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Shopping Cart Content 2-->
+                <div class="card-items mt-5">
+                    <div class="card-item flex items-center pb-4 border-b border-gray-200">
+
+                        <!--Xbox Series X Image -->
+                        <div class="card-item-image w-40 h-28 bg-white p-4 rounded-lg">
+                            <img class="w-full h-full object-contain" src="data:image/jpeg;base64,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">
+                        </div>
+
+                        <!-- Details and Brand of the Products -->
+                        <div class="card-item-details flex-grow">
+                            <div class="card-item-title font-medium text-sm text-gray-600">Xbox Series X</div>
+                            <div class="card-item-brand text-sm font-medium text-gray-400">Microsoft</div>
+                        </div>
+
+                        <!-- Items Counter -->
+                        <div class="card-item-counter w-48 flex items-center">
+
+                            <!-- Chevron Left Icon-->
+                            <div class="chevron-left mr-2 h-6 w-6 bg-gray-100 text-gray-500 rounded-lg cursor-pointer flex items-center justify-center hover:bg-gray-200">
+                                <i class="fas fa-chevron-left"></i>
+                            </div>
+
+                            <!-- Counter Number -->
+                            <h4 class="text-gray-400">x1</h4>
+
+                            <!-- Chevron Right Icon-->
+                            <div class="chevron-right ml-2 h-6 w-6 bg-gray-100 text-gray-500 rounded-lg cursor-pointer flex items-center justify-center hover:bg-gray-200">
+                                <i class="fas fa-chevron-right"></i>
+                            </div>
+                        </div>
+
+                        <!-- Items Costs -->
+                        <div class="card-item-total-cost w-48 text-gray-400 font-medium">
+                            $680.90
+                        </div>
+
+                        <!-- Cross Icon -->
+                        <div class="card-item-delete-icon w-10 font-semibold text-gray-400 cursor-pointer hover:text-gray-500">
+                            <i class="fas fa-times"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Complete Order Details-->
+                <div class="complete-order flex justify-end mt-10">
+
+                    <!-- Amount -->
+                    <div class="total-cost mr-7">
+                        <h2 class="text-gray-400 font-medium">Total Cost</h2>
+                        <h2 class="total-cost-amount text-gray-600 font-bold text-2xl">$3,369.89</h2>
+                    </div>
+
+                    <!-- Complete Order Button -->
+                    <div class="complete-order-button w-56 flex items-center justify-center bg-yellow-500 rounded-lg text-white font-semibold cursor-pointer hover:bg-yellow-600">
+                        Complete Order
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

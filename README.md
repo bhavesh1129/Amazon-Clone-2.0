@@ -1,4 +1,4 @@
-## Amazon Clone 2.0 (Frontend Project)
+## Amazon Clone 2.0 (Frontend-Project)
 
 
 <img src="https://github.com/bhavesh1129/Amazon-Clone-2.0/blob/main/Snap1.png" width="900" height="500">
